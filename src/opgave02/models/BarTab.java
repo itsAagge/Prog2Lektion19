@@ -21,8 +21,8 @@ public class BarTab {
 
     }
 
-    private int getTotal() {
-        int total = 0;
+    private double getTotal() {
+        double total = 0;
         for (BarTabItem item : items) {
             total += item.getSubTotal();
         }

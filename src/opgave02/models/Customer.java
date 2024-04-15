@@ -1,40 +1,19 @@
 package opgave02.models;
 
-import opgave02.models.products.Beer;
+import opgave02.models.DiscountTypes.DiscountType;
 
 public class Customer {
     private BarTab tab;
-    private Billing billing;
+    private DiscountType discountType;
 
-    public Customer(Billing billing) {
-        this.billing = billing;
+    public Customer(DiscountType discountType) {
+        this.discountType = discountType;
         this.tab = new BarTab();
     }
 
     public void placeOrder(Order order) {
-        int ajustedPrice = 0;
-        switch (billing) {
-            case Billing.NORMAL:
-                ajustedPrice = CalculateNormalPrice(order);
-                break;
-            case Billing.STUDENT:
-                ajustedPrice = CalculateStudentPrice(order);
-                break;
-            default:
-                throw new IllegalStateException("Unexpected value: " + billing);
-        }
+        double ajustedPrice = discountType.CalculatePrice(order);
         tab.addItem(new BarTabItem(order, ajustedPrice));
-    }
-
-    private int CalculateStudentPrice(Order order) {
-        if (order.getProduct() instanceof Beer beer) {
-            return order.getTotalPrice() - order.getCount() * 5;
-        }
-        return order.getTotalPrice();
-    }
-
-    private int CalculateNormalPrice(Order order) {
-        return order.getTotalPrice();
     }
 
     public BarTab getBarTab() {

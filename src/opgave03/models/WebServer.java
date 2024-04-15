@@ -1,9 +1,9 @@
 package opgave03.models;
 
 public class WebServer {
-    private Logger logger;
+    private LogType logger;
 
-    public WebServer(Logger logger) {
+    public WebServer(LogType logger) {
         this.logger = logger;
     }
 
@@ -13,5 +13,9 @@ public class WebServer {
             return;
         }
         logger.logInfo("Handling request: " + request);
+    }
+
+    public void setLogger(LogType logger) {
+        this.logger = logger;
     }
 }

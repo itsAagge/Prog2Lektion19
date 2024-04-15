@@ -2,9 +2,9 @@ package opgave02.models;
 
 public class BarTabItem {
     private Order order;
-    private int subTotal;
+    private double subTotal;
 
-    public BarTabItem(Order order, int subTotal) {
+    public BarTabItem(Order order, double subTotal) {
         this.order = order;
         this.subTotal = subTotal;
     }
@@ -13,7 +13,7 @@ public class BarTabItem {
         return order;
     }
 
-    public int getSubTotal() {
+    public double getSubTotal() {
         return subTotal;
     }
 }

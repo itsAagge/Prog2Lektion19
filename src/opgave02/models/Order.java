@@ -3,7 +3,7 @@ package opgave02.models;
 import opgave02.models.products.Product;
 
 public class Order {
-    private int count;
+    private double count;
     private Product product;
 
     public Order(int count, Product product) {
@@ -11,7 +11,7 @@ public class Order {
         this.product = product;
     }
 
-    public int getTotalPrice() {
+    public double getTotalPrice() {
         return count * product.getPrice();
     }
 
@@ -19,7 +19,7 @@ public class Order {
         return product;
     }
 
-    public int getCount() {
+    public double getCount() {
         return count;
     }
 }

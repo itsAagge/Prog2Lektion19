@@ -1,4 +1,4 @@
 package opgave01.models;
 
-public class Queen {
+public class Queen extends Character {
 }

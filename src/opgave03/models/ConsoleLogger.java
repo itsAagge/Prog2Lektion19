@@ -3,7 +3,7 @@ package opgave03.models;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-public class Logger {
+public class ConsoleLogger implements LogType {
     public void logInfo(String message) {
         String logMessage = "[" + LocalDate.now() + "][" + LocalTime.now() + "][INFO] " + message;
         System.out.println(logMessage);
