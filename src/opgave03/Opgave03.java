@@ -8,7 +8,7 @@ public class Opgave03 {
     public static void main(String[] args) {
         WebServer server = new WebServer(new ConsoleLogger());
         server.handleRequest("Hello World");
-        server.setLogger(new FileLogger());
+        server.setLogger(new FileLogger("log.txt"));
         server.handleRequest("Hello World in file");
     }
 }
