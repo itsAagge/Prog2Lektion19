@@ -6,7 +6,7 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 
 public class FileLogger implements LogType {
-    private String fileLocation;
+    private final String fileLocation;
 
     public FileLogger(String fileLocation) {
         this.fileLocation = fileLocation;
@@ -18,7 +18,7 @@ public class FileLogger implements LogType {
             String logMessage = "[" + LocalDate.now() + "][" + LocalTime.now() + "][INFO] " + message;
             printWriter.println(logMessage);
         } catch (Exception e) {
-
+            System.out.println(e.getMessage());
         }
     }
 
@@ -28,7 +28,7 @@ public class FileLogger implements LogType {
             String logMessage = "[" + LocalDate.now() + "][" + LocalTime.now() + "][ERROR] " + message;
             printWriter.println(logMessage);
         } catch (Exception e) {
-
+            System.out.println(e.getMessage());
         }
     }
 }
